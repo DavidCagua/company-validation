@@ -1,23 +1,13 @@
 import React from "react";
-import logo from "./logo.svg";
+import Navbar from "./components/Navbar";
+import Card from "./components/Card";
 import "./App.css";
 
 function App() {
-  const [data, setData] = React.useState(null);
-
-  React.useEffect(() => {
-    fetch("/api")
-      .then((res) => res.json())
-      .then((data) => setData(data.message));
-  }, []);
-
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>{!data ? "Loading..." : data + "hola"}</p>
-        <p>hola</p>
-      </header>
+      <Navbar />
+      <Card />
     </div>
   );
 }
