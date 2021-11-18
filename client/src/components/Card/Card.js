@@ -1,22 +1,21 @@
 import React from "react";
 import "./Card.css";
 import clock from "../../clock.svg";
-import icon from "../../img1.svg";
 import rectangle from "../../rectangle.png";
 
-function Card() {
+function Card(props) {
   return (
     <div className="Card">
       <div className="FrameUp">
         <img className="FrameImage" src={rectangle} alt="" />
-        <img className="Image" src={icon} alt="" />
-        <p>Solcitudes de creacion de empresas</p>
+        <img className="Image" src={props.img} alt="imagen" />
+        <p>{props.title}</p>
       </div>
       <div className="FrameDown">
         <hr />
         <p>
-          <img src={clock} alt="" />
-          <span> 2 solicitudes sin tratar</span>
+          <img src={clock} alt="status" />
+          <span> {props.status}</span>
         </p>
       </div>
     </div>

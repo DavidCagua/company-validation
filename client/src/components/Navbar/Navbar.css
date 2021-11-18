@@ -1,5 +1,23 @@
 .Navbar {
   background: var(--nvGray);
   color: var(--white);
-  margin-block-end: 20px;
+  margin-block-end: 80px;
+  display: flex;
+  justify-content: space-between;
+}
+.Navbar p {
+  display: flex;
+  align-items: center;
+  font: bold var(--body2);
+  margin-inline-start: 34px;
+}
+.Nav_logo {
+  width: 70px;
+  height: 70px;
+}
+.Nav_image {
+  width: 20px;
+  height: 18px;
+  margin-block-start: 27px;
+  margin-inline-end: 26px;
 }
