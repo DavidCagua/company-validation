@@ -1,0 +1,5 @@
+.Navbar {
+  background: var(--nvGray);
+  color: var(--white);
+  margin-block-end: 20px;
+}

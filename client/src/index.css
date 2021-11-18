@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
-@import "./components/Card.css";
+@import "./components/Card/Card.css";
+@import "./components/Navbar/Navbar.css";
 :root {
   --fontBase: "Roboto", sans-serif;
   --headline1: bold 95px / 153.71px var(--fontBase);
@@ -8,7 +9,7 @@
   --body1: 24px / 28px var(--fontBase);
   --body2: 16px / 19px var(--fontBase);
   --button: bold 14px / 22px var(--fontBase);
-  --caption: 12px / 19px var(--fontBase);
+  --caption: 12px / 14px var(--fontBase);
   --bgGray: #e5e7eb;
   --nvGray: #2f3337;
   --hrGray: #cbcedd;
@@ -16,10 +17,14 @@
   --blue: #26b4ff;
   --fontColor1: #424242;
   --fontColor2: #9a9a9a;
+  --white: #ffffff;
 }
 body {
   margin: 0;
   background: var(--bgGray);
   color: var(--fontColor1);
   font: var(--body1);
+}
+body p {
+  margin: 0;
 }
