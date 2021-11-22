@@ -3,19 +3,19 @@ import "./Card.css";
 import clock from "../../clock.svg";
 import rectangle from "../../rectangle.png";
 
-function Card(props) {
+function Card({ img, title, status }) {
   return (
     <div className="Card">
       <div className="FrameUp">
         <img className="FrameImage" src={rectangle} alt="" />
-        <img className="Image" src={props.img} alt="imagen" />
-        <p>{props.title}</p>
+        <img className="Image" src={img} alt="imagen" />
+        <p>{title}</p>
       </div>
       <div className="FrameDown">
         <hr />
         <p>
           <img src={clock} alt="status" />
-          <span> {props.status}</span>
+          <span> {status}</span>
         </p>
       </div>
     </div>
