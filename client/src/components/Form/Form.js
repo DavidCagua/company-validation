@@ -1,5 +1,6 @@
 import React from "react";
 import "./Form.css";
+import Documents from "../Documents/Documents";
 import logo1 from "../../logo1.svg";
 
 function Form() {
@@ -32,6 +33,7 @@ function Form() {
           </label>
         </div>
         <div className="Documents-container"></div>
+        <Documents />
         <div>
           <input type="submit" value="Submit" />
         </div>

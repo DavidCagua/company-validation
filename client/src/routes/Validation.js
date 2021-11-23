@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import "./Validation.css";
 import Form from "../components/Form/Form";
+import Button from "../components/Button/Button";
 import right from "../right.svg";
 import left from "../left.svg";
 
@@ -16,6 +17,8 @@ export default function Validation() {
         </p>
       </div>
       <Form />
+      <Button Aproval={true} />
+      <Button Aproval={false} />
     </Fragment>
   );
 }

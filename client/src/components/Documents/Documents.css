@@ -1,0 +1,6 @@
+.Documents-container {
+  font: var(--buttonFont);
+  color: black;
+  margin-inline-start: 28px;
+  margin-block-start: 50px;
+}

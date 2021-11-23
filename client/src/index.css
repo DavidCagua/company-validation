@@ -6,6 +6,7 @@
   --titleForm: 14px / 16px var(--fontBase);
   --inputForm: bold 16px / 19px var(--fontBase);
   --caption: 12px / 14px var(--fontBase);
+  --buttonFont: bold 18px / 21px var(--fontBase);
   --bgGray: #e5e7eb;
   --nvGray: #2f3337;
   --hrGray: #cbcedd;

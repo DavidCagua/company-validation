@@ -4,6 +4,7 @@
   flex-direction: column;
   margin: 35px 10px;
   border-radius: 8px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 .Image-container {
   display: flex;
@@ -23,6 +24,7 @@
 .Input-container {
   margin-inline-start: 28px;
   margin-inline-end: 28px;
+  justify-self: center;
   display: flex;
   flex-direction: column;
   gap: 60px;
