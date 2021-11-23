@@ -3,14 +3,19 @@
   --fontBase: "Roboto", sans-serif;
   --body1: 24px / 28px var(--fontBase);
   --body2: 16px / 19px var(--fontBase);
+  --titleForm: 14px / 16px var(--fontBase);
+  --inputForm: bold 16px / 19px var(--fontBase);
   --caption: 12px / 14px var(--fontBase);
   --bgGray: #e5e7eb;
   --nvGray: #2f3337;
   --hrGray: #cbcedd;
+  --inputFormBorder: #a7a7a7;
   --blue: #26b4ff;
   --fontColor1: #424242;
   --fontColor2: #9a9a9a;
+  --fontColor3: #727171;
   --white: #ffffff;
+  --container: #f3f3f3;
 }
 body {
   margin: 0;

@@ -1,0 +1,45 @@
+.Form-container {
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  margin: 35px 10px;
+  border-radius: 8px;
+}
+.Image-container {
+  display: flex;
+  background: var(--container);
+  width: 291px;
+  height: 237px;
+  margin-block-start: 40px;
+  margin-block-end: 36px;
+  margin-inline: auto;
+}
+.Image-container img {
+  background: var(--container);
+  width: 174px;
+  height: 151px;
+  margin: auto;
+}
+.Input-container {
+  margin-inline-start: 28px;
+  margin-inline-end: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+.Form-container label {
+  display: flex;
+  flex-direction: column;
+  font: var(--titleForm);
+  color: var(--fontColor3);
+}
+.Form-container input {
+  border-width: 0 0 0.5px;
+  border-color: var(--inputFormBorder);
+  font: var(--inputForm);
+  text-transform: uppercase;
+  padding-inline-start: 4px;
+  padding-inline-end: 4px;
+  padding-block-start: 8px;
+  padding-block-end: 8px;
+}

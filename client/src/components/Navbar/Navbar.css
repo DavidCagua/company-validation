@@ -1,7 +1,6 @@
 .Navbar {
   background: var(--nvGray);
   color: var(--white);
-  margin-block-end: 80px;
   display: flex;
   justify-content: space-between;
 }

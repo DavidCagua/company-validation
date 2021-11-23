@@ -1,15 +1,21 @@
 import { Fragment } from "react";
+import "./Validation.css";
+import Form from "../components/Form/Form";
+import right from "../right.svg";
+import left from "../left.svg";
 
 export default function Validation() {
   return (
     <Fragment>
-      <div>
-        <p>Administración / Aprobación de Empresas</p>
-        <p>Empresa 1 de 2 pendiente por aprobación</p>
+      <div className="Wrapper-form">
+        <p className="Nav-page">Administración / Aprobación de Empresas</p>
+        <p className="Nav-company">
+          <img src={left} alt="" />
+          <span>Empresa 1 de 2 pendiente por aprobación</span>
+          <img src={right} alt="" />
+        </p>
       </div>
-      <div>
-        <img alt="" />
-      </div>
+      <Form />
     </Fragment>
   );
 }

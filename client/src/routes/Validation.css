@@ -1,0 +1,18 @@
+.Wrapper-form {
+  display: flex;
+  flex-direction: column;
+}
+.Nav-page {
+  font: bold var(--titleForm);
+  margin-block-start: 40px;
+  margin-block-end: 40px;
+  margin-inline-start: 13px;
+}
+.Nav-company {
+  display: flex;
+  align-items: center;
+  align-self: center;
+  gap: 9px;
+  color: var(--fontColor3);
+  font: var(--titleForm);
+}
