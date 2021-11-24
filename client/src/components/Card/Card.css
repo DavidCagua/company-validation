@@ -7,13 +7,11 @@
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
-  margin-block-start: 80px;
 }
 .FrameUp {
   display: flex;
   align-items: center;
   gap: 18px;
-  margin-block-start: 5px;
 }
 .FrameImage {
   margin-inline-start: 16px;
@@ -26,7 +24,6 @@
   top: -3px;
   left: 27.5px;
   position: absolute;
-  margin-inline-end: 12px;
   width: 40px;
   height: 35px;
 }
@@ -55,4 +52,47 @@
   margin-block-start: 11px;
   margin-inline-start: 16px;
   gap: 10px;
+}
+@media screen and (min-width: 768px) {
+  .Card {
+    width: 554px;
+    height: 330px;
+    border-radius: 16px;
+  }
+  .FrameUp {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .FrameImage {
+    margin-inline-start: 32px;
+    width: 110px;
+    height: 115px;
+    bottom: 34px;
+  }
+  .Image {
+    top: -8px;
+    left: 57.5px;
+    width: 56px;
+    height: 52px;
+  }
+  .FrameUp p {
+    margin-inline-start: 27px;
+    font-size: 36px;
+    line-height: 42px;
+  }
+  .FrameDown {
+    font-size: 14px;
+    line-height: 16px;
+    margin-block-end: 27px;
+  }
+  .Card hr {
+    width: 553px;
+  }
+  .FrameDown p {
+    margin-block-start: 27px;
+    margin-inline-start: 27px;
+    gap: 13px;
+    max-inline-size: 180px;
+  }
 }

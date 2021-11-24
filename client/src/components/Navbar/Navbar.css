@@ -4,11 +4,16 @@
   display: flex;
   justify-content: space-between;
 }
-.Navbar p {
+.Mobile {
   display: flex;
   align-items: center;
   font: bold var(--body2);
   margin-inline-start: 34px;
+  gap: 6px;
+}
+.Desktop {
+  display: none;
+  font: bold var(--body2);
 }
 .Nav_logo {
   width: 70px;
@@ -19,4 +24,42 @@
   height: 18px;
   margin-block-start: 27px;
   margin-inline-end: 26px;
+}
+.Notifications {
+  background: red;
+  width: 10px;
+  height: 10px;
+  border-radius: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  font-size: 9px;
+}
+.Admin {
+  display: flex;
+}
+@media screen and (min-width: 1024px) {
+  .Container {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    margin-inline-end: 26px;
+  }
+  .Navbar {
+    min-inline-size: 1180px;
+  }
+  .Container p:not(:first-child) {
+    font-weight: 400;
+  }
+  .Desktop {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font: bold var(--body2);
+  }
+  .Nav_image {
+    display: none;
+  }
 }

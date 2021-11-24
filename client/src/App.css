@@ -3,4 +3,18 @@
   flex-direction: column;
   gap: 80px;
   align-items: center;
+  margin-block-start: 80px;
+  margin-block-end: 80px;
+}
+@media screen and (min-width: 768px) {
+  .Card_wrapper {
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 75px 60px;
+    justify-content: center;
+    max-inline-size: 1300px;
+    margin-inline: auto;
+    margin-block-start: 110px;
+    margin-block-end: 110px;
+  }
 }
