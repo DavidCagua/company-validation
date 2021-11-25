@@ -1,7 +1,9 @@
 import React from "react";
 import "./Form.css";
 import Documents from "../Documents/Documents";
+import DocumentsButton from "../DocumentsButton/DocumentsButton";
 import logo1 from "../../logo1.svg";
+import Button from "../Button/Button";
 
 function Form() {
   return (
@@ -31,13 +33,15 @@ function Form() {
             # de empleados
             <input type="text" />
           </label>
+          <DocumentsButton />
         </div>
-        <div className="Documents-container"></div>
         <Documents />
-        <div>
+        <div className="SubmitButton">
           <input type="submit" value="Submit" />
         </div>
       </form>
+      <Button Aproval={true} />
+      <Button Aproval={false} />
     </div>
   );
 }

@@ -1,7 +1,6 @@
 .Button {
   display: flex;
   margin-inline: auto;
-  margin-block-start: 38px;
   margin-block-end: 38px;
   background: var(--white);
   align-items: center;

@@ -1,6 +1,8 @@
 .Wrapper-form {
   display: flex;
   flex-direction: column;
+  position: relative;
+  margin-block-end: 185px;
 }
 .Nav-page {
   font: bold var(--titleForm);
@@ -15,4 +17,13 @@
   gap: 9px;
   color: var(--fontColor3);
   font: var(--titleForm);
+}
+@media screen and (min-width: 1024px) {
+  .Nav-page {
+    margin-block-start: 36px;
+    margin-inline-start: 51px;
+  }
+  .Nav-company {
+    order: 1;
+  }
 }

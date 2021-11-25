@@ -4,3 +4,8 @@
   margin-inline-start: 28px;
   margin-block-start: 50px;
 }
+@media screen and (min-width: 1024px) {
+  .Documents-container {
+    display: none;
+  }
+}

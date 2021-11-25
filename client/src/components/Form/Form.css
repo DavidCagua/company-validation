@@ -5,6 +5,7 @@
   margin: 35px 10px;
   border-radius: 8px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  position: relative;
 }
 .Image-container {
   display: flex;
@@ -44,4 +45,56 @@
   padding-inline-end: 4px;
   padding-block-start: 8px;
   padding-block-end: 8px;
+}
+
+.Button:last-child {
+  position: absolute;
+  top: 1040px;
+  left: 0;
+  right: 0;
+  margin-inline-end: auto;
+  margin-inline-start: auto;
+}
+
+.Button:nth-child(0n + 3) {
+  position: absolute;
+  top: 958px;
+  left: 0;
+  right: 0;
+}
+.SubmitButton {
+  display: none;
+}
+@media screen and (min-width: 1024px) {
+  .Form-container {
+    width: 942px;
+    height: 734px;
+    margin-inline: auto;
+    margin-block-end: 46px;
+  }
+  .Input-container {
+    flex-direction: row;
+    gap: 71px 20px;
+    flex-wrap: wrap;
+    justify-content: left;
+    margin-inline-start: 132px;
+  }
+  .Image-container {
+    margin-block-start: 14px;
+    margin-block-end: 42px;
+  }
+  .Form-container label {
+    width: 345px;
+  }
+  .Button:last-child {
+    position: absolute;
+    top: 120px;
+    left: 630px;
+  }
+
+  .Button:nth-child(0n + 3) {
+    position: absolute;
+    top: 38px;
+    left: 630px;
+  }
 }
