@@ -1,48 +1,41 @@
-import React from "react";
-import "./Form.css";
-import Documents from "../Documents/Documents";
-import DocumentsButton from "../DocumentsButton/DocumentsButton";
-import logo1 from "../../logo1.svg";
-import Button from "../Button/Button";
+import React, { Fragment, useEffect, useState } from "react";
+import Company from "../Company/company";
+import right from "../../right.svg";
+import left from "../../left.svg";
 
 function Form() {
+  const [Companies, setCompanies] = useState();
+  const [CompanyIndex, setCompanyIndex] = useState(0);
+  useEffect(() => {
+    let mounted = true;
+    fetch("http://localhost:3001/company")
+      .then((response) => response.json())
+      .then((data) => {
+        if (mounted) {
+          setCompanies(data);
+        }
+      });
+    return () => (mounted = false);
+  }, []);
+  function handleClikLeft() {
+    if (CompanyIndex > 0) {
+      return setCompanyIndex(CompanyIndex - 1);
+    }
+  }
+  function handleClikRight() {
+    if (CompanyIndex + 1 < Companies.length) {
+      return setCompanyIndex(CompanyIndex + 1);
+    }
+  }
   return (
-    <div className="Form-container">
-      <div className="Image-container">
-        <img src={logo1} alt="logo" />
-      </div>
-      <form>
-        <div className="Input-container">
-          <label>
-            Nombre de la empresa
-            <input type="text" />
-          </label>
-          <label>
-            Razón Social
-            <input type="text" />
-          </label>
-          <label>
-            Tipo de identificación
-            <input type="text" />
-          </label>
-          <label>
-            Identificación
-            <input type="text" />
-          </label>
-          <label>
-            # de empleados
-            <input type="text" />
-          </label>
-          <DocumentsButton />
-        </div>
-        <Documents />
-        <div className="SubmitButton">
-          <input type="submit" value="Submit" />
-        </div>
-      </form>
-      <Button Aproval={true} />
-      <Button Aproval={false} />
-    </div>
+    <Fragment>
+      <p className="Nav-company">
+        <img src={left} alt="" onClick={handleClikLeft} />
+        <span>Empresa 1 de 2 pendiente por aprobación</span>
+        <img src={right} alt="" onClick={handleClikRight} />
+      </p>
+      {Companies ? <Company {...Companies[CompanyIndex]} /> : <p>hola</p>}
+    </Fragment>
   );
 }
 

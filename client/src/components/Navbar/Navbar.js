@@ -1,5 +1,6 @@
 import React from "react";
 import "./Navbar.css";
+import { useNavigate } from "react-router-dom";
 import logo from "../../logo.svg";
 import nav_menu from "../../nav_menu.svg";
 import Avatar from "../../navbarImages/Avatar.svg";
@@ -10,10 +11,14 @@ import Flecha from "../../navbarImages/Flecha.svg";
 import Lupa from "../../navbarImages/Lupa.svg";
 
 function Navbar() {
+  const navigate = useNavigate();
+  function handleClick() {
+    navigate(`/`);
+  }
   return (
     <div className="Navbar">
       <div className="Container">
-        <p className="Mobile">
+        <p className="Mobile Logo" onClick={handleClick}>
           <img className="Nav_logo" src={logo} alt="" />
           <span>Gente PreValente</span>
         </p>
@@ -23,13 +28,13 @@ function Navbar() {
         </p>
       </div>
       <div className="Container">
-        <p className="Desktop">
+        <span className="Desktop">
           <img src={Admin} alt="" />
           <span className="Admin">
             Administración
             <div className="Notifications">2</div>
           </span>
-        </p>
+        </span>
         <p className="Desktop">
           <img src={Empleo} alt="" />
           <span>Empleo</span>

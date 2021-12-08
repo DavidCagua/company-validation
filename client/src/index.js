@@ -9,12 +9,12 @@ import Navbar from "./components/Navbar/Navbar";
 
 ReactDOM.render(
   <Fragment>
-    <Navbar />
     <Router>
+      <Navbar />
       <React.StrictMode>
         <Routes>
           <Route path="/" element={<App />} />
-          <Route path="validation" element={<Validation />} />
+          <Route path="/validation" element={<Validation />} />
         </Routes>
       </React.StrictMode>
     </Router>

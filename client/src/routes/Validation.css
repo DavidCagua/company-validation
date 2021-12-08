@@ -18,6 +18,9 @@
   color: var(--fontColor3);
   font: var(--titleForm);
 }
+.Nav-company img {
+  cursor: pointer;
+}
 @media screen and (min-width: 1024px) {
   .Nav-page {
     margin-block-start: 36px;

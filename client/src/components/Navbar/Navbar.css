@@ -19,6 +19,9 @@
   width: 70px;
   height: 70px;
 }
+.Logo {
+  cursor: pointer;
+}
 .Nav_image {
   width: 20px;
   height: 18px;

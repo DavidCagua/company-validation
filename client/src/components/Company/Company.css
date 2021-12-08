@@ -1,0 +1,103 @@
+.Company-container {
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  margin: 35px 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  position: relative;
+}
+.Image-container {
+  display: flex;
+  background: var(--container);
+  width: 291px;
+  height: 237px;
+  margin-block-start: 40px;
+  margin-block-end: 36px;
+  margin-inline: auto;
+}
+.Image-container img {
+  background: var(--container);
+  width: 174px;
+  height: 151px;
+  margin: auto;
+}
+.Input-container {
+  margin-inline-start: 28px;
+  margin-inline-end: 28px;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+.Company-container label {
+  display: flex;
+  flex-direction: column;
+  font: var(--titleForm);
+  color: var(--fontColor3);
+}
+.Company-container input {
+  border-width: 0 0 0.5px;
+  border-color: var(--inputFormBorder);
+  font: var(--inputForm);
+  text-transform: uppercase;
+  padding-inline-start: 4px;
+  padding-inline-end: 4px;
+  padding-block-start: 8px;
+  padding-block-end: 8px;
+  cursor: pointer;
+  pointer-events: none;
+  background: var(--white);
+}
+
+.Button:last-child {
+  position: absolute;
+  top: 1040px;
+  left: 0;
+  right: 0;
+  margin-inline-end: auto;
+  margin-inline-start: auto;
+}
+
+.Button:nth-child(0n + 3) {
+  position: absolute;
+  top: 958px;
+  left: 0;
+  right: 0;
+}
+.SubmitButton {
+  display: none;
+}
+@media screen and (min-width: 1024px) {
+  .Company-container {
+    width: 942px;
+    height: 734px;
+    margin-inline: auto;
+    margin-block-end: 46px;
+  }
+  .Input-container {
+    flex-direction: row;
+    gap: 71px 20px;
+    flex-wrap: wrap;
+    justify-content: left;
+    margin-inline-start: 132px;
+  }
+  .Image-container {
+    margin-block-start: 14px;
+    margin-block-end: 42px;
+  }
+  .Company-container label {
+    width: 345px;
+  }
+  .Button:last-child {
+    position: absolute;
+    top: 120px;
+    left: 630px;
+  }
+
+  .Button:nth-child(0n + 3) {
+    position: absolute;
+    top: 38px;
+    left: 630px;
+  }
+}

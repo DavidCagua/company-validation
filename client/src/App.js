@@ -6,7 +6,6 @@ import img3 from "./img3.svg";
 import img4 from "./img4.svg";
 import "./App.css";
 import { Fragment } from "react";
-import { Link } from "react-router-dom";
 
 const cardListData = [
   {
@@ -38,7 +37,6 @@ const cardListData = [
 function App() {
   return (
     <Fragment>
-      <Link to="/validation"> Validation</Link>
       <div className="Card_wrapper">
         {cardListData.map((cardData) => (
           <Card key={cardData.id} {...cardData} />
