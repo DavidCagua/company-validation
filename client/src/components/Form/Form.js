@@ -31,10 +31,17 @@ function Form() {
     <Fragment>
       <p className="Nav-company">
         <img src={left} alt="" onClick={handleClikLeft} />
-        <span>Empresa 1 de 2 pendiente por aprobación</span>
+        <span>
+          Empresa {Companies ? CompanyIndex + 1 : 0} de{" "}
+          {Companies ? Companies.length : 0} pendiente por aprobación
+        </span>
         <img src={right} alt="" onClick={handleClikRight} />
       </p>
-      {Companies ? <Company {...Companies[CompanyIndex]} /> : <p>hola</p>}
+      {Companies ? (
+        <Company {...Companies[CompanyIndex]} />
+      ) : (
+        <p>Cargando...</p>
+      )}
     </Fragment>
   );
 }

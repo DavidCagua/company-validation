@@ -39,8 +39,8 @@ function Company({ name, title, nit, idType, employees, logo }) {
           <input type="submit" value="Submit" />
         </div>
       </form>
-      <Button Aproval={true} />
-      <Button Aproval={false} />
+      <Button state={true} nit={nit} />
+      <Button state={false} nit={nit} />
     </div>
   );
 }

@@ -13,6 +13,7 @@ const companySchema = mongoose.Schema({
     min: 0,
   },
   logo: String,
+  active: { type: Boolean, default: false },
 });
 
 const Company = mongoose.model("Company", companySchema);

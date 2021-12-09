@@ -17,3 +17,11 @@ export const createCompany = async (req, res) => {
     res.status(404).json({ message: error.message });
   }
 };
+export const updateCompany = async (req, res) => {
+  try {
+    await Company.updateOne({ nit: req.body.nit }, { active: req.body.state });
+    res.status(200);
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+};
