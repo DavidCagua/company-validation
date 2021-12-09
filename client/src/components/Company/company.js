@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Company.css";
 import Documents from "../Documents/Documents";
 import DocumentsButton from "../DocumentsButton/DocumentsButton";
 import Button from "../Button/Button";
 
 function Company({ name, title, nit, idType, employees, logo }) {
+  const documents = 1;
+  const mql = window.matchMedia("(min-width: 1024px)");
+  const [Mobile, setMobile] = useState(!mql.matches);
+  useEffect(() => {
+    mql.onchange = (e) => {
+      setMobile(!e.matches);
+    };
+  }, []);
   return (
     <div className="Company-container">
       <div className="Image-container">
@@ -34,13 +42,17 @@ function Company({ name, title, nit, idType, employees, logo }) {
           </label>
           <DocumentsButton />
         </div>
-        <Documents />
+        {documents > 0 ? (
+          <Documents name={name} />
+        ) : (
+          <h4>No hay documentos cargados</h4>
+        )}
         <div className="SubmitButton">
           <input type="submit" value="Submit" />
         </div>
       </form>
-      <Button state={true} nit={nit} />
-      <Button state={false} nit={nit} />
+      <Button documents={documents} mobile={Mobile} state={true} nit={nit} />
+      <Button documents={documents} mobile={Mobile} state={false} nit={nit} />
     </div>
   );
 }

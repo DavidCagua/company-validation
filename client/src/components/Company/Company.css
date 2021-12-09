@@ -68,6 +68,9 @@
 .SubmitButton {
   display: none;
 }
+h4 {
+  text-align: center;
+}
 @media screen and (min-width: 1024px) {
   .Company-container {
     width: 942px;

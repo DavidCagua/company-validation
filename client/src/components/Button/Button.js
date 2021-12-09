@@ -3,7 +3,34 @@ import "./Button.css";
 import validate from "../../validate.svg";
 import reject from "../../reject.svg";
 
-function Button({ state, nit }) {
+function Button({ state, nit, documents, mobile }) {
+  const styleTrue = {
+    mobile: {
+      position: "absolute",
+      top: `${960 + documents * 55}px`,
+      left: "0",
+      right: "0",
+    },
+    desktop: {
+      position: "absolute",
+      top: "38px",
+      left: "660px",
+    },
+  };
+  const styleFalse = {
+    mobile: {
+      position: "absolute",
+      top: `${1040 + documents * 55}px`,
+      left: "0",
+      right: "0",
+    },
+    desktop: {
+      position: "absolute",
+      top: "120px",
+      left: "660px",
+    },
+  };
+
   async function handleClick() {
     const requestOptions = {
       method: "PUT",
@@ -19,7 +46,19 @@ function Button({ state, nit }) {
   }
 
   return (
-    <button className="Button" onClick={handleClick}>
+    <button
+      className="Button"
+      style={
+        mobile
+          ? state
+            ? styleTrue.mobile
+            : styleFalse.mobile
+          : state
+          ? styleTrue.desktop
+          : styleFalse.desktop
+      }
+      onClick={handleClick}
+    >
       <img src={state ? validate : reject} alt="validate" />
       <span>{state ? "Aprobar Empresa" : "Rechazar Empresa"}</span>
     </button>

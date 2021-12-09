@@ -1,8 +1,34 @@
 .Documents-container {
   font: var(--buttonFont);
   color: black;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
   margin-inline-start: 28px;
-  margin-block-start: 50px;
+  margin-inline-end: 28px;
+}
+
+ul {
+  padding-inline-start: 20px;
+  padding-inline-end: 10px;
+}
+li {
+  list-style: none;
+  cursor: pointer;
+}
+.List-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.icon img {
+  width: 30px;
+  height: 40px;
 }
 @media screen and (min-width: 1024px) {
   .Documents-container {
