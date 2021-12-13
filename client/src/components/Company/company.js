@@ -3,18 +3,51 @@ import "./Company.css";
 import Documents from "../Documents/Documents";
 import DocumentsButton from "../DocumentsButton/DocumentsButton";
 import Button from "../Button/Button";
+import Toggle from "../Toggle/Toggle";
 
-function Company({ name, title, nit, idType, employees, logo }) {
-  const documents = 1;
+function Company({
+  name,
+  title,
+  nit,
+  idType,
+  employees,
+  logo,
+  documents,
+  active,
+  visible,
+}) {
+  const documentsCounter = documents.length;
   const mql = window.matchMedia("(min-width: 1024px)");
   const [Mobile, setMobile] = useState(!mql.matches);
+  const [isToggled, setIsToggled] = useState(active);
+
   useEffect(() => {
     mql.onchange = (e) => {
       setMobile(!e.matches);
     };
-  }, []);
+  }, [mql]);
+
+  async function handleClick(state) {
+    const requestOptions = {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        state: state,
+        nit: nit,
+      }),
+    };
+    fetch("http://localhost:3001/company", requestOptions)
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        setIsToggled(data.active);
+      });
+  }
+
   return (
-    <div className="Company-container">
+    <div className={visible ? "Company-container" : "Company-container-hidden"}>
+      <Toggle isToggled={isToggled} />
       <div className="Image-container">
         <img src={logo} alt="logo" />
       </div>
@@ -42,8 +75,10 @@ function Company({ name, title, nit, idType, employees, logo }) {
           </label>
           <DocumentsButton />
         </div>
-        {documents > 0 ? (
-          <Documents name={name} />
+        {documentsCounter > 0 ? (
+          documents.map((document) => {
+            return <Documents key={document.name} name={document.name} />;
+          })
         ) : (
           <h4>No hay documentos cargados</h4>
         )}
@@ -51,8 +86,20 @@ function Company({ name, title, nit, idType, employees, logo }) {
           <input type="submit" value="Submit" />
         </div>
       </form>
-      <Button documents={documents} mobile={Mobile} state={true} nit={nit} />
-      <Button documents={documents} mobile={Mobile} state={false} nit={nit} />
+      <Button
+        documents={documentsCounter}
+        mobile={Mobile}
+        state={true}
+        nit={nit}
+        onClick={handleClick}
+      />
+      <Button
+        documents={documentsCounter}
+        mobile={Mobile}
+        state={false}
+        nit={nit}
+        onClick={handleClick}
+      />
     </div>
   );
 }

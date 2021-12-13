@@ -10,10 +10,10 @@ function Documents({ name }) {
         <ul>
           <li>
             <span className="List-item">
-              RUT {name}
+              {name.toUpperCase()}
               <span className="icon">
                 <img src={pdfIcon} alt="" />
-                RUT {name}
+                {name.toUpperCase()}
               </span>
             </span>
           </li>

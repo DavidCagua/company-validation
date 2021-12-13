@@ -16,6 +16,9 @@ li {
   list-style: none;
   cursor: pointer;
 }
+li:hover {
+  color: blue;
+}
 .List-item {
   display: flex;
   align-items: center;

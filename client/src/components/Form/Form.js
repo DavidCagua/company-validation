@@ -38,7 +38,15 @@ function Form() {
         <img src={right} alt="" onClick={handleClikRight} />
       </p>
       {Companies ? (
-        <Company {...Companies[CompanyIndex]} />
+        Companies.map((comp) => {
+          comp.visible = false;
+          if (Companies.indexOf(comp) === CompanyIndex) {
+            comp.visible = true;
+          } else {
+            comp.visible = false;
+          }
+          return <Company key={comp.name} {...comp} />;
+        })
       ) : (
         <p>Cargando...</p>
       )}

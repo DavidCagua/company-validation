@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
-
-const companySchema = mongoose.Schema({
+const Schema = mongoose.Schema;
+const companySchema = new Schema({
   name: String,
   title: String,
   idType: String,
@@ -14,6 +14,12 @@ const companySchema = mongoose.Schema({
   },
   logo: String,
   active: { type: Boolean, default: false },
+  documents: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Document",
+    },
+  ],
 });
 
 const Company = mongoose.model("Company", companySchema);
