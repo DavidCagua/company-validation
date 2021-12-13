@@ -14,12 +14,9 @@ ul {
 }
 li {
   list-style: none;
-  cursor: pointer;
-}
-li:hover {
-  color: blue;
 }
 .List-item {
+  text-decoration: none;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -28,13 +25,22 @@ li:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-x: hidden;
 }
 .icon img {
   width: 30px;
   height: 40px;
 }
+.icon p {
+  font-size: 9px;
+}
 @media screen and (min-width: 1024px) {
-  .Documents-container {
-    display: none;
+  .Documents-container h3 {
+    font-size: 36px;
+  }
+  .List-container {
+    margin-inline-start: 73px;
+    margin-inline-end: 120px;
+    font-size: 24px;
   }
 }

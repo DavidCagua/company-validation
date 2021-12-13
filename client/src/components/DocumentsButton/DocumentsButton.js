@@ -2,9 +2,9 @@ import React from "react";
 import "./DocumentsButton.css";
 import clip from "../../Clip.svg";
 
-function DocumentsButton() {
+function DocumentsButton({ onClick }) {
   return (
-    <button className="DocumentsButton">
+    <button onClick={() => onClick()} className="DocumentsButton">
       <img src={clip} alt="validate" />
       <span>Ver archivos adjuntos</span>
     </button>

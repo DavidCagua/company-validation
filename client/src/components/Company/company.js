@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import "./Company.css";
 import Documents from "../Documents/Documents";
 import DocumentsButton from "../DocumentsButton/DocumentsButton";
+import Modal from "../Modal/Modal.js";
 import Button from "../Button/Button";
 import Toggle from "../Toggle/Toggle";
 
@@ -20,6 +21,9 @@ function Company({
   const mql = window.matchMedia("(min-width: 1024px)");
   const [Mobile, setMobile] = useState(!mql.matches);
   const [isToggled, setIsToggled] = useState(active);
+  const [isOpen, setIsOpen] = useState(false);
+  const openModal = () => setIsOpen(true);
+  const closeModal = () => setIsOpen(false);
 
   useEffect(() => {
     mql.onchange = (e) => {
@@ -51,7 +55,7 @@ function Company({
       <div className="Image-container">
         <img src={logo} alt="logo" />
       </div>
-      <form>
+      <div>
         <div className="Input-container">
           <label>
             Nombre de la empresa
@@ -73,19 +77,42 @@ function Company({
             # de empleados
             <input type="text" value={employees} disabled />
           </label>
-          <DocumentsButton />
+          <DocumentsButton onClick={openModal} />
         </div>
-        {documentsCounter > 0 ? (
-          documents.map((document) => {
-            return <Documents key={document.name} name={document.name} />;
-          })
+        {Mobile ? (
+          documentsCounter > 0 ? (
+            documents.map((document) => {
+              return (
+                <Documents
+                  key={document.name}
+                  name={document.name}
+                  url={document.url}
+                />
+              );
+            })
+          ) : (
+            <h4>No hay documentos cargados</h4>
+          )
         ) : (
-          <h4>No hay documentos cargados</h4>
+          <Fragment>
+            <Modal isOpen={isOpen} closeModal={closeModal}>
+              {documentsCounter > 0 ? (
+                documents.map((document) => {
+                  return (
+                    <Documents
+                      key={document.name}
+                      name={document.name}
+                      url={document.url}
+                    />
+                  );
+                })
+              ) : (
+                <h4>No hay documentos cargados</h4>
+              )}
+            </Modal>
+          </Fragment>
         )}
-        <div className="SubmitButton">
-          <input type="submit" value="Submit" />
-        </div>
-      </form>
+      </div>
       <Button
         documents={documentsCounter}
         mobile={Mobile}
