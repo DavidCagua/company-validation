@@ -13,24 +13,28 @@ const cardListData = [
     img: img1,
     title: "Solicitudes de creación de empresas",
     status: "2 solicitudes sin tratar",
+    url: "/validation",
   },
   {
     id: 2,
     img: img2,
     title: "Indicadores",
     status: "Visitado por última vez: 31/01/2020",
+    url: "/",
   },
   {
     id: 3,
     img: img3,
     title: "Inscripción de empleados en empresas",
     status: "3 usuarios sin empresa registrada",
+    url: "/",
   },
   {
     id: 4,
     img: img4,
     title: "Gestión de usuarios",
     status: "532 usuarios activos en la plataforma",
+    url: "/",
   },
 ];
 

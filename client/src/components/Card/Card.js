@@ -4,10 +4,10 @@ import clock from "../../clock.svg";
 import rectangle from "../../rectangle.png";
 import { useNavigate } from "react-router-dom";
 
-function Card({ img, title, status }) {
+function Card({ img, title, status, url }) {
   const navigate = useNavigate();
   function handleClick() {
-    navigate(`/validation`);
+    navigate(`${url}`);
   }
   return (
     <div className="Card" onClick={handleClick}>
